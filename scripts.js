@@ -67,7 +67,14 @@ function isGuessCorrect(correct) {
 }
 
 function numIsHigher(higher) {
-    if (higher) {
+    if (currGuess == 1)
+    {
+        instructions.textContent = "Ok that's not possible. You either forgot your number or you are cheating. Game over"
+        toggleBtns([lowerBtn, higherBtn],false);
+        toggleBtns([resetBtn], true);
+        return;
+    }
+    else if (higher) {
         min = currGuess + 1;
         console.log("Changing the minimum to: " + min);
     } else {
